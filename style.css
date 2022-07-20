@@ -1,3 +1,23 @@
 th {
-    color: red;
+    color: blueviolet;
+    padding: 1rem 2rem;
+}
+
+td {
+    padding: 1rem 2rem;
+}
+
+table {
+    border: 2px solid red;
+    border-spacing: 0px;
+}
+
+.table_container {
+    display: flex;
+    justify-content: center;
+}
+
+.table_data:nth-of-type(2n) {
+    background-color: rosybrown;
+    border-spacing: 5px;
 }
