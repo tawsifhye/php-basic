@@ -23,6 +23,7 @@ $information = array(
     ['first name' => 'Julia', 'last name' => 'Haupt', 'zip' => '67439', 'dob' => '10/18/1985'],
     ['first name' => 'Julias', 'last name' => 'Agens', 'zip' => '67439', 'dob' => '10/18/1985'],
     ['first name' => 'Gloria', 'last name' => 'Reeves', 'zip' => '67439', 'dob' => '10/18/1985'],
+    ['first name' => 'Steve', 'last name' => 'Smith', 'zip' => '', 'dob' => '10/18/1985'],
 );
 
 for ($i = 0; $i < sizeof($information); $i++) {
@@ -30,16 +31,22 @@ for ($i = 0; $i < sizeof($information); $i++) {
 
     foreach ($information[$i] as $key => $info) {
         $uppercase_key = ucfirst($key);
-        $lowercase_key = ucfirst($info);
+        if ($information[$i][$key] == '') {
+            $uppercase_value = "Unknown";
+
+        } else {
+            $uppercase_value = ucfirst($info);
+
+        }
         if (strpos($key, 'name')) {
             echo "
        <h2>
-       $uppercase_key: $lowercase_key
+       $uppercase_key: $uppercase_value
        </h2>
         ";
         } else {
             echo "
-            <p>$key: $info</p>
+            <p>$uppercase_key: $uppercase_value</p>
             ";
         }
 
